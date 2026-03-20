@@ -43,8 +43,23 @@ lead_scoring_project/
 
 ## Dataset Source
 - **Primary source (official):** UCI Machine Learning Repository — Bank Marketing Data Set: https://archive.ics.uci.edu/dataset/222/bank+marketing
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
 - **Direct CSV used in this repository:** `lead_scoring_project/data/bank.csv` (sample subset for offline/demo workflow).
 - For production training, download the full dataset (`bank-additional.zip` / `bank.zip`) from UCI and replace `data/bank.csv` before retraining.
+=======
+- **Required training file:** `lead_scoring_project/data/bank-full.csv` (semicolon-separated from UCI archive).
+- The included `data/bank.csv` is a small demo sample only and should not be used for final model quality claims.
+>>>>>>> theirs
+=======
+- **Required training file:** `lead_scoring_project/data/bank-full.csv` (semicolon-separated from UCI archive).
+- The included `data/bank.csv` is a small demo sample only and should not be used for final model quality claims.
+>>>>>>> theirs
+=======
+- **Required training file:** `lead_scoring_project/data/bank-full.csv` (semicolon-separated from UCI archive).
+- The included `data/bank.csv` is a small demo sample only and should not be used for final model quality claims.
+>>>>>>> theirs
 
 ## Local Setup
 
@@ -114,7 +129,25 @@ Returns recent saved predictions for dashboard analytics.
 - PostgreSQL: Replace `DATABASE_URL` handling in backend for environment-driven config and set Render variable.
 
 ## Production Hardening Checklist
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
 - Replace sample `data/bank.csv` with full UCI dataset.
+=======
+- Use `data/bank-full.csv` from UCI for training and evaluation (avoid tiny sample datasets for reporting).
+- Consider dropping `duration` for pre-call scoring use-cases to reduce label leakage.
+- Use stratified cross-validation + holdout metrics for model selection.
+>>>>>>> theirs
+=======
+- Use `data/bank-full.csv` from UCI for training and evaluation (avoid tiny sample datasets for reporting).
+- Consider dropping `duration` for pre-call scoring use-cases to reduce label leakage.
+- Use stratified cross-validation + holdout metrics for model selection.
+>>>>>>> theirs
+=======
+- Use `data/bank-full.csv` from UCI for training and evaluation (avoid tiny sample datasets for reporting).
+- Consider dropping `duration` for pre-call scoring use-cases to reduce label leakage.
+- Use stratified cross-validation + holdout metrics for model selection.
+>>>>>>> theirs
 - Re-run notebook to produce trained `backend/model.pkl`.
 - Add auth/rate limiting for public APIs.
 - Restrict CORS origins to trusted frontends.
