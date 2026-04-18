@@ -1,0 +1,251 @@
+/* ============================================
+   LEAD FORM STYLING
+   ============================================ */
+
+.lead-form {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 20px auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* ============================================
+   FORM CONTAINER (TWO COLUMNS)
+   ============================================ */
+
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ============================================
+   INDIVIDUAL FORM FIELD
+   ============================================ */
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tooltip {
+  cursor: help;
+  color: #3498db;
+  font-size: 12px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip:hover {
+  opacity: 1;
+}
+
+/* ============================================
+   INPUT & SELECT STYLING
+   ============================================ */
+
+.field-input {
+  padding: 12px 14px;
+  border: 2px solid #e0e6ed;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: white;
+  transition: all 0.3s ease;
+  color: #2c3e50;
+}
+
+.field-input:hover {
+  border-color: #3498db;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.15);
+  background-color: #f8fafc;
+}
+
+.field-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.field-select option {
+  padding: 10px;
+  background-color: white;
+  color: #2c3e50;
+}
+
+/* ============================================
+   SUBMIT BUTTON
+   ============================================ */
+
+.submit-button {
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .lead-form {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .form-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .form-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .form-column {
+    gap: 14px;
+  }
+
+  .field-input {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .submit-button {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lead-form {
+    padding: 15px;
+  }
+
+  .form-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .form-field {
+    gap: 6px;
+  }
+
+  .field-label {
+    font-size: 12px;
+  }
+
+  .field-input {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+}
+
+/* ============================================
+   ANIMATION
+   ============================================ */
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lead-form {
+  animation: slideIn 0.5s ease-out;
+}
+
+.form-field {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Add this to your existing LeadForm.css */
+
+/* Full-width field for lead name */
+.form-full-width {
+  width: 100%;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e0e6ed;
+}
+
+.form-full-width .form-field {
+  margin: 0;
+}
+
+.form-full-width .field-input {
+  max-width: 100%;
+}

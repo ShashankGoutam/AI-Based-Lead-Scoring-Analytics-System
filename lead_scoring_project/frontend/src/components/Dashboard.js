@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import LeadForm from "./LeadForm";
 import Charts from "./Charts";
+import "./Dashboard.css";
 
 const API_BASE = process.env.REACT_APP_API_BASE_URL || "http://localhost:8000";
 
-// Main dashboard orchestrates prediction calls and analytics.
 function Dashboard() {
   const [prediction, setPrediction] = useState(null);
   const [history, setHistory] = useState([]);
@@ -41,17 +41,45 @@ function Dashboard() {
   };
 
   return (
-    <section>
+    <section className="dashboard-section">
       <LeadForm onSubmit={handleSubmit} loading={loading} />
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <div className="error-message">{error}</div>}
 
+      {/* Latest Prediction with Lead ID & Name ← NEW */}
       {prediction && (
-        <div style={{ marginTop: "1rem", padding: "1rem", background: "#f7f7f7", borderRadius: "8px" }}>
-          <h3>Latest Prediction</h3>
-          <p><strong>Probability:</strong> {(prediction.probability * 100).toFixed(2)}%</p>
-          <p><strong>Lead Score:</strong> {prediction.score}</p>
-          <p><strong>Category:</strong> {prediction.category}</p>
+        <div className="latest-prediction">
+          <h3>✅ Latest Prediction</h3>
+          <div className="prediction-details">
+            <div className="detail-item">
+              <span className="detail-label">Lead ID:</span>
+              <code className="lead-id">{prediction.lead_id}</code>
+            </div>
+            {prediction.lead_name && (
+              <div className="detail-item">
+                <span className="detail-label">Customer Name:</span>
+                <span className="lead-name">{prediction.lead_name}</span>
+              </div>
+            )}
+            <div className="detail-item">
+              <span className="detail-label">Probability:</span>
+              <span className="probability">{(prediction.probability * 100).toFixed(2)}%</span>
+            </div>
+            <div className="detail-item">
+              <span className="detail-label">Lead Score:</span>
+              <span className="score">{prediction.score}</span>
+            </div>
+            <div className="detail-item">
+              <span className="detail-label">Category:</span>
+              <span className={`category category-${prediction.category?.toLowerCase()}`}>
+                {prediction.category}
+              </span>
+            </div>
+            <div className="detail-item">
+              <span className="detail-label">Timestamp:</span>
+              <span className="timestamp">{new Date(prediction.timestamp).toLocaleString()}</span>
+            </div>
+          </div>
         </div>
       )}
 
