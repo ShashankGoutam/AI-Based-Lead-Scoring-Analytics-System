@@ -30,11 +30,11 @@ Production-oriented, end-to-end full-stack machine learning project for predicti
 
 **✅ Gradient Boosting (Production Model):**
 ```
-├─ Recall:      61.03%  (catches 61% of leads)
-├─ Precision:   34.95%  (quality score: 35% of predictions are positive)
-├─ F1-Score:    0.4443  (best overall balance)
-├─ ROC-AUC:     0.7940  (excellent discrimination)
-└─ Accuracy:    82.13%  (strong overall performance)
+├─ Recall:      63.52%  (catches 63% of leads)
+├─ Precision:   35.15%  (quality score: 35% of predictions are positive)
+├─ F1-Score:    0.4525  (best overall balance)
+├─ ROC-AUC:     0.8022  (excellent discrimination)
+└─ Accuracy:    82.02%  (strong overall performance)
 ```
 
 ### Why Gradient Boosting? 🎯
